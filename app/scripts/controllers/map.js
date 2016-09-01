@@ -40,8 +40,10 @@ angular.module('mapAppApp')
 		window.bounds[window.bounds.length] = {latitudes: latitudes, longitudes: longitudes };
 		
 		if(window.polygons.length === 2) {
+			var isOverlapping = plottingService.isOverlapping(window.polygons);
+			console.log('Coordinates: ');
 			console.log( window.polygons );
-			console.log(plottingService.isOverlapping(window.polygons));
+			console.log('Is overlapping? ' + (isOverlapping ? 'YES' : 'NO'));
 			window.bounds = [];
 			window.polygons = [];
 		}

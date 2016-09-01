@@ -20,7 +20,7 @@ angular.module('mapAppApp')
 
     };
     function checkIntersectingLines(subjPlane, clipPlane)
-    {
+    { 
     	var limit = 0;
     	var subjPointA, subjPointB;
     	var clipPointA, clipPointB;
@@ -32,7 +32,6 @@ angular.module('mapAppApp')
     	{
     		subjPointA = subjPlane[limit];
     		subjPointB = (limit === lengthOfSubj - 1 ? subjPlane[0] : subjPlane[limit + 1]);
-    		console.log(limit + ' -> ' + (limit === lengthOfSubj - 1 ? 0 : limit + 1) ) ;
     		for(var i = 0; i < lengthOfClip ; i++)
     		{
     			clipPointA = clipPlane[i];
@@ -46,7 +45,6 @@ angular.module('mapAppApp')
     	return (count > 0 ? true : false);
     };
     function isIntersecting(subjPointA , clipPointA, subjPointB, clipPointB) {
-    	console.log(subjPointA,clipPointA)
     	var orientation1 = getOrientation(subjPointA, clipPointA, subjPointB),
     		orientation2 = getOrientation(subjPointA, clipPointA, clipPointB),
     		orientation3 = getOrientation(subjPointB, clipPointB, subjPointA),
@@ -79,7 +77,6 @@ angular.module('mapAppApp')
     				count++;
     			}
     		}
-    		console.log(' ------ ');
     		limit++;
     	}
     	return (count > 0 ? true : false);
