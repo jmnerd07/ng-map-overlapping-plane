@@ -1,0 +1,14 @@
+<div ng-controller="MapCtrl as vm">
+  <ng-map zoom="13" center="37.774546, -122.433523"
+    map-type-id="ROADMAP"
+    street-view-control-options="{position: 'LEFT_CENTER'}">
+    <drawing-manager
+      on-overlaycomplete="vm.onMapOverlayCompleted()"
+      drawing-control-options="{position: 'TOP_CENTER',drawingModes:['polygon']}"
+      drawingControl="true"
+      drawingMode="null"
+      markerOptions="{icon:'www.example.com/icon'}"
+      polygonOptions="{fillColor: '#000000',fillOpacity: 0.3,strokeWeight: 5,clickable: false,zIndex: 1}" >
+    </drawing-manager>
+  </ng-map>
+</div>
